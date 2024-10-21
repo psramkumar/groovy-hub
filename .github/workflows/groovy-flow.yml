@@ -34,6 +34,5 @@ jobs:
       - name: Build with Gradle
         run: |
           pwd
-          groovy -v
           ./gradlew build
 
