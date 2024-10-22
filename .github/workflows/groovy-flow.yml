@@ -31,15 +31,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin' # or 'zulu', 'adopt', etc.
 
-
-      # Runs a single command using the runners shell
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: '7.4'
+      - name: Install Groovy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y groovy
 
       - name: Build with Gradle
         run: |
           pwd
-          ./gradlew build
+          groovy -v
 
